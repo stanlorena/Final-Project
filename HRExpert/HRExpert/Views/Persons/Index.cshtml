@@ -1,0 +1,39 @@
+﻿@using HRExpert.Models.Persoane
+@model HRExpert.Models.Persoane.PersonIndexModel
+
+<div id="persons">
+    <h3>Persoane <button class="button">+</button> <button class="button"><i class="fa fa-arrow-circle-down"></i></button> </h3>
+    <div id="personsTable">
+        <table class="table table-condensed" id="personIndexTable">
+            <thead>
+                <tr>
+                    <th>Marca</th>
+                    <th>Nume</th>
+                    <th>Prenume</th>
+                    <th>Data nasterii</th>
+                    <th>Sex</th>
+                    <th>Nationalitate</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var person in @Model.Persons)
+                {
+                <tr class="personRow">
+                    <td class="">
+                        <a id = "marca" asp-controller="Persons" asp-action="Detail" asp-route-id="@person.Id">
+                            @person.Marca
+                        </a>
+                    </td>
+                    <td class="">@person.Nume</td>
+                    <td class="">@person.Prenume</td>
+                    <td class="">@person.DataNastere</td>
+                    <td class="">@person.Sex</td>
+                    <td class="">@person.Nationalitate</td>
+                    <td class="">@person.Email</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppData\bin\Debug\netcoreapp3.0\AppData.deps.json
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppData\bin\Debug\netcoreapp3.0\AppData.dll
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppData\obj\Debug\netcoreapp3.0\AppData.csprojAssemblyReference.cache
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppData\obj\Debug\netcoreapp3.0\AppData.AssemblyInfoInputs.cache
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppData\obj\Debug\netcoreapp3.0\AppData.AssemblyInfo.cs
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppData\bin\Debug\netcoreapp3.0\AppData.runtimeconfig.json
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppData\bin\Debug\netcoreapp3.0\AppData.runtimeconfig.dev.json
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppData\bin\Debug\netcoreapp3.0\AppData.pdb
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppData\obj\Debug\netcoreapp3.0\AppData.dll
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppData\obj\Debug\netcoreapp3.0\AppData.pdb

@@ -1,0 +1,186 @@
+﻿@using HRExpert.Models.Contracte
+@model HRExpert.Models.Contracte.ContractDetailModel
+
+<div class="container">
+    <div class="page-header clearfix detailHeading">
+
+    </div>
+</div>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-12">
+            <p id="tipContract"><b>Tipul contractului: </b> @Model.TipContract</p>
+            <p id="numePersoana"><b>Numele persoanei: </b> @Model.PersonName</p>
+            <p id="prenumePersoana"><b>Prenumele persoanei: </b> @Model.PersonSurname</p>
+            <p id="numarContract"><b>Numarul contractului: </b> @Model.NumarContract</p>
+            <p id="dataInceput"><b>Data de inceput: </b> @Model.DataInceput</p>
+            <p id="dataSfarsit"><b>Data de sfarsit: </b> @Model.DataSfarsit</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h4>Fiscalitate contract <button class="button">+</button> </h4>
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>Fiscalitate</th>
+                    <th>Se acorda deduceri</th>
+                    <th>Data inceput</th>
+                    <th>Data sfarsit</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var contractFiscality in @Model.ContractFiscality)
+                {
+                    <tr>
+                        <td> @contractFiscality.Fiscalitate</td>
+                        @if (@contractFiscality.SeAcordaDeduceri)
+                        {
+                            <td> Da</td>
+                        }
+                        else
+                        {
+                            <td> Nu</td>
+                        }
+                        <td> @contractFiscality.DataInceput</td>
+                        <td> @contractFiscality.DataSfarsit</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h4>Asigurare contract <button class="button">+</button> </h4>
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>Asigurare</th>
+                    <th>Companie de asigurare</th>
+                    <th>Data inceput</th>
+                    <th>Data sfarsit</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var contractInsurance in @Model.ContractInsurance)
+                {
+                    <tr>
+                        <td> @contractInsurance.Asigurare</td>
+                        <td> @contractInsurance.CompanieAsigurare</td>
+                        <td> @contractInsurance.DataInceput</td>
+                        <td> @contractInsurance.DataSfarsit</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h4>Asignare in structura organizatorica <button class="button">+</button></h4>
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>Departament</th>
+                    <th>Functie</th>
+                    <th>Data inceput</th>
+                    <th>Data sfarsit</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var contractOA in @Model.ContractOrganizatoricalAssignment)
+                {
+                    <tr>
+                        <td> @contractOA.Departament</td>
+                        <td> @contractOA.Functie</td>
+                        <td> @contractOA.DataInceput</td>
+                        <td> @contractOA.DataSfarsit</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h4>Perioada contract <button class="button">+</button></h4>
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>Perioada</th>
+                    <th>Data inceput</th>
+                    <th>Data sfarsit</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var contractPeriod in @Model.ContractPeriod)
+                {
+                    <tr>
+                        <td> @contractPeriod.Perioada</td>
+                        <td> @contractPeriod.DataInceput</td>
+                        <td> @contractPeriod.DataSfarsit</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h4>Salariu contract <button class="button">+</button></h4>
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>Salariu</th>
+                    <th>Data inceput</th>
+                    <th>Data sfarsit</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var contractSalary in @Model.ContractSalary)
+                {
+                    <tr>
+                        <td> @contractSalary.Salariu</td>
+                        <td> @contractSalary.DataInceput</td>
+                        <td> @contractSalary.DataSfarsit</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h4>Program de lucru contract <button class="button">+</button></h4>
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>Program de lucru</th>
+                    <th>Norma</th>
+                    <th>Data inceput</th>
+                    <th>Data sfarsit</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var contractWorkProgram in @Model.ContractWorkProgram)
+                {
+                    <tr>
+                        <td> @contractWorkProgram.ProgramLucru</td>
+                        <td> @contractWorkProgram.Norma</td>
+                        <td> @contractWorkProgram.DataInceput</td>
+                        <td> @contractWorkProgram.DataSfarsit</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

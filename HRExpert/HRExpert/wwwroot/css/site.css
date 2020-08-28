@@ -1,0 +1,201 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #FF1493;
+    border-color: #FF1493;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #FF1493;
+    border-color: #FF1493;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+.mdl-layout__header-row {
+    background-color: #FF1493;
+}
+
+.mdl-navigation__link {
+    color: white;
+    font-weight: bold;
+}
+
+.logo {
+    font-family: "Coda";
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+    .logo > a {
+        color: #fff;
+        text-decoration: none;
+        transition-duration: 0.5s;
+    }
+
+        .logo > a:hover {
+            color: #FFC0CB;
+            transition: ease;
+            text-decoration: none;
+            transition-duration: 0.5s;
+        }
+
+.page-content {
+    padding: 50px;
+    padding-left: 200px;
+    padding-right: 175px;
+    margin: 10px auto;
+}
+
+.page-heading {
+    color: #fff;
+}
+
+.jumbotron {
+    background-color: #FFE5CC;
+    padding-top: 0.3cm;
+    padding-bottom: 0.3cm;
+    padding-left: 1cm;
+}
+
+thead {
+    background-color: #FFE5CC;
+}
+
+.mdl-card__title-text {
+    color: #fff;
+    font-weight: bold;
+}
+
+h4 {
+    font-weight: bold;
+}
+
+a #marca {
+    color: #000000;
+}
+
+#persoane {
+    background: url('/images/people2.png') 50%;
+}
+
+#contracte {
+    background: url('/images/contracts3.jpg') 50%;
+}
+
+#statistici {
+    background: url('/images/satistics1.png') 50%;
+}
+
+#Marca, #Nume, #Prenume, #DataNastere, #Sex, #Nationalitate, #Email {
+    padding-bottom: 3px;
+    margin-bottom: 0px;
+}
+
+#numarContract {
+    padding-bottom: 3px;
+    margin-bottom: 0px;
+}
+
+#tipContract, #numePersoana, #prenumePersoana, #numarContract, #dataInceput, #dataSfarsit {
+    padding-bottom: 3px;
+    margin-bottom: 0px;
+}
+
+.button {
+    background-color: #FFE5CC;
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.fa {
+    color: #fff;
+    padding: 5px 0px;
+}
+
+.align-items-center {
+    align-content:center;
+}
+
+#statContracte, #statPersoane, #statFemeiSex, #statBarbatiSex, #statContracteSal, #statContractePerioada {
+    color: grey;
+    font-size: 20px;
+    display: inline;
+    text-align: center;
+    clear: both;
+    padding-left: 30px;
+}
+
+.fa-hand-point-right {
+    color: #FF1493;
+    padding-right: 10px;
+}
+
+#introducere {
+    color: #FF1493;
+    display: inline;
+    text-align: center;
+    clear: both;
+    padding-left: 30px;
+    padding-bottom: 20px;
+}

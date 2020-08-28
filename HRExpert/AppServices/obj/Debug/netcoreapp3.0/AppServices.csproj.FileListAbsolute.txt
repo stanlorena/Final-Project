@@ -1,0 +1,11 @@
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppServices\bin\Debug\netcoreapp3.0\AppServices.deps.json
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppServices\bin\Debug\netcoreapp3.0\AppServices.dll
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppServices\bin\Debug\netcoreapp3.0\AppServices.pdb
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppServices\bin\Debug\netcoreapp3.0\AppData.dll
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppServices\bin\Debug\netcoreapp3.0\AppData.pdb
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppServices\obj\Debug\netcoreapp3.0\AppServices.csprojAssemblyReference.cache
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppServices\obj\Debug\netcoreapp3.0\AppServices.AssemblyInfoInputs.cache
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppServices\obj\Debug\netcoreapp3.0\AppServices.AssemblyInfo.cs
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppServices\obj\Debug\netcoreapp3.0\AppServices.csproj.CopyComplete
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppServices\obj\Debug\netcoreapp3.0\AppServices.dll
+C:\Users\Lore\Desktop\Aplicatie licenta\HRExpert\AppServices\obj\Debug\netcoreapp3.0\AppServices.pdb

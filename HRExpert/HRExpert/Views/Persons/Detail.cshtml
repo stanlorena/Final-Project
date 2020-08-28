@@ -1,0 +1,108 @@
+﻿@using HRExpert.Models.Persoane
+@model HRExpert.Models.Persoane.PersonDetailModel
+
+<div class="container">
+    <div class="page-header clearfix detailHeading">
+        
+    </div>
+</div>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-4">
+            <p id="Marca"><b>Marca: </b> @Model.Marca</p>
+            <p id="Nume"><b>Nume: </b> @Model.Nume</p>
+            <p id="Prenume"><b>Prenume: </b> @Model.Prenume</p>
+            <p id="DataNastere"><b>Data nasterii: </b> @Model.DataNastere</p>
+            <p id="Sex"><b>Sex: </b> @Model.Sex</p>
+            <p id="Nationalitate"><b>Nationalitate: </b> @Model.Nationalitate</p>
+            <p id="Email"><b>Email: </b> @Model.Email</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h4>Identitatea persoanei <button class="button">+</button> </h4>
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>CNP</th>
+                    <th>Serie</th>
+                    <th>Numar</th>
+                    <th>Emitent</th>
+                    <th>Data Emitere</th>
+                    <th>Data Expirare</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var personIdentity in @Model.PersonIdentity)
+                {
+                <tr>
+                    <td>@personIdentity.CNP</td>
+                    <td>@personIdentity.Numar</td>
+                    <td>@personIdentity.Serie</td>
+                    <td>@personIdentity.Emitent</td>
+                    <td>@personIdentity.DataEmitere</td>
+                    <td>@personIdentity.DataExpirare</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h4>Adresa persoanei <button class="button">+</button></h4>
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>Strada</th>
+                    <th>Numar</th>
+                    <th>Bloc</th>
+                    <th>Etaj</th>
+                    <th>Apartament</th>
+                    <th>Localitate</th>
+                    <th>Judet</th>
+                    <th>Data de inceput</th>
+                    <th>Data de sfarsit</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var personAddress in @Model.PersonAddress)
+                {
+                    <tr>
+                        <td>
+                            @personAddress.Strada
+                        </td>
+                        <td>
+                            @personAddress.Numar
+                        </td>
+                        <td>
+                            @personAddress.Bloc
+                        </td>
+                        <td>
+                            @personAddress.Etaj
+                        </td>
+                        <td>
+                            @personAddress.Apartament
+                        </td>
+                        <td>
+                            @personAddress.Localitate
+                        </td>
+                        <td>
+                            @personAddress.Judet
+                        </td>
+                        <td>
+                            @personAddress.DataInceput
+                        </td>
+                        <td>
+                            @personAddress.DataSfarsit
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

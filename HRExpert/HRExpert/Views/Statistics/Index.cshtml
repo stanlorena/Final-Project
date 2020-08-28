@@ -1,0 +1,85 @@
+﻿@model HRExpert.Models.Statistici.StatisticsModel;
+
+
+
+<!-- Resources -->
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+<!-- HTML -->
+<div id="chartdiv"></div>
+<div id="contractePer"></div>
+
+<!-- Chart code -->
+<script>
+    am4core.ready(function () {
+
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        var chart = am4core.create("chartdiv", am4charts.PieChart3D);
+        chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+
+        chart.legend = new am4charts.Legend();
+        let title = chart.titles.create();
+        title.text = "Angajatii in functie de sex";
+
+        chart.data = [
+            {
+                Sex: "Femei",
+                Procent: @Model.NrFemei
+            },
+            {
+                Sex: "Barbati",
+                Procent: @Model.NrBarbati
+            }
+        ];
+
+        var series = chart.series.push(new am4charts.PieSeries3D());
+        series.dataFields.value = "Procent";
+        series.dataFields.category = "Sex";
+
+        var chart2 = am4core.create("contractePer", am4charts.PieChart3D);
+        chart2.hiddenState.properties.opacity = 0; // this creates initial fade-in
+
+        chart2.legend = new am4charts.Legend();
+        let title2 = chart2.titles.create();
+        title2.text = "Contractele in functie de perioada";
+
+        chart2.data = [
+            {
+                Perioada: "Nedeterminata",
+                Procent: @Model.NrContractePerioadaNedeterminata
+            },
+            {
+                Perioada: "Determinata",
+                Procent: @Model.NrContractePerioadaDeterminata
+            }
+        ];
+
+        var series2 = chart2.series.push(new am4charts.PieSeries3D());
+        series2.dataFields.value = "Procent";
+        series2.dataFields.category = "Perioada";
+
+    }); // end am4core.ready()
+</script>
+
+<style>
+    #chartdiv, #contractePer {
+        width: 650px;
+        height: 300px;
+    }
+
+    #chartdiv {
+        float: left;
+    }
+
+    #contractePer {
+        overflow: hidden;
+        float: right;
+    }
+</style>
+
+
