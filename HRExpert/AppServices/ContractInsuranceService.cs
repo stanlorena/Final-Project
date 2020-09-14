@@ -22,6 +22,18 @@ namespace AppServices
             _context.SaveChanges();
         }
 
+        public void Edit(int contractInsuranceId, string asigurare, string companieAsigurare, DateTime dataInceput, DateTime dataSfarsit)
+        {
+            var contractInsurance = _context.ContractInsurances.FirstOrDefault(c => c.Id == contractInsuranceId);
+
+            contractInsurance.Asigurare = asigurare;
+            contractInsurance.CompanieAsigurare = companieAsigurare;
+            contractInsurance.DataInceput = dataInceput;
+            contractInsurance.DataSfarsit = dataSfarsit;
+
+            _context.SaveChanges();
+        }
+
         public IEnumerable<ContractInsurance> GetAll()
         {
             return _context.ContractInsurances;
@@ -38,6 +50,12 @@ namespace AppServices
             return _context.ContractInsurances.
                 Where(i => i.Contract.Id == id).
                 OrderByDescending(i => i.DataInceput);
+        }
+
+        public void Remove(ContractInsurance contractInsurance)
+        {
+            _context.Remove(contractInsurance);
+            _context.SaveChanges();
         }
     }
 }

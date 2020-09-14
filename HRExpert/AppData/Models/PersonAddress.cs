@@ -22,6 +22,7 @@ namespace AppData.Models
         [Required]
         public DateTime DataInceput { get; set; }
         public DateTime DataSfarsit { get; set; }
+        public int PersoanaId { get; set; }
         [Required]
         public Person Persoana { get; set; }
     }

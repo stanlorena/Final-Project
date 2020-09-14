@@ -7,7 +7,6 @@ namespace AppData.Models
 {
     public class Person
     {
-        [Required]
         public int Id { get; set; }
         [Required]
         public int Marca { get; set; }

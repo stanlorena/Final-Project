@@ -10,6 +10,8 @@ namespace AppData
         IEnumerable<ContractPeriod> GetAll();
         ContractPeriod GetById(int periodId);
         void Add(ContractPeriod contractPeriod);
+        void Edit(int contractPeriodId, string perioada, DateTime dataInceput, DateTime dataSfarsit);
+        void Remove(ContractPeriod contractPeriod);
         IEnumerable<ContractPeriod> GetContractPeriodHistory(int id);
     }
 }

@@ -155,7 +155,12 @@ a #marca {
     margin-bottom: 0px;
 }
 
-.button {
+#addButton {
+    padding: 5px 12px;
+    text-align: center;
+}
+
+.button  {
     background-color: #FFE5CC;
     border: none;
     color: white;
@@ -199,3 +204,4 @@ a #marca {
     padding-left: 30px;
     padding-bottom: 20px;
 }
+

@@ -2,7 +2,7 @@
 @model HRExpert.Models.Persoane.PersonIndexModel
 
 <div id="persons">
-    <h3>Persoane <button class="button">+</button> <button class="button"><i class="fa fa-arrow-circle-down"></i></button> </h3>
+    <h3>Persoane <a class="button" role="button" asp-controller="Persons" asp-action="AddPerson">+</a> <a class="button" role="button" asp-controller="Persons" asp-action="ExportToExcel"><i class="fa fa-arrow-circle-down"></i></a> </h3>
     <div id="personsTable">
         <table class="table table-condensed" id="personIndexTable">
             <thead>

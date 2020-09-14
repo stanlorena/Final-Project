@@ -22,6 +22,17 @@ namespace AppServices
             _context.SaveChanges();
         }
 
+        public void Edit(int contractPeriodId, string perioada, DateTime dataInceput, DateTime dataSfarsit)
+        {
+            var contractPeriod = _context.ContractPeriods.FirstOrDefault(c => c.Id == contractPeriodId);
+
+            contractPeriod.Perioada = perioada;
+            contractPeriod.DataInceput = dataInceput;
+            contractPeriod.DataSfarsit = dataSfarsit;
+
+            _context.SaveChanges();
+        }
+
         public IEnumerable<ContractPeriod> GetAll()
         {
             return _context.ContractPeriods;
@@ -38,6 +49,12 @@ namespace AppServices
             return _context.ContractPeriods.
                 Where(c => c.Contract.Id == id).
                 OrderByDescending(c => c.DataInceput);
+        }
+
+        public void Remove(ContractPeriod contractPeriod)
+        {
+            _context.Remove(contractPeriod);
+            _context.SaveChanges();
         }
     }
 }

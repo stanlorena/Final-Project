@@ -1,0 +1,68 @@
+﻿@using HRExpert.Models.Persoane
+@model HRExpert.Models.Persoane.AddPersonModel
+
+@section Scripts{
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+}
+
+<div class="container">
+    <div class="header clearfix detailHeading">
+        <h2 class="text-muted text-center">Adaugare persoana</h2>
+    </div>
+    <div class="jumbotron">
+        <div class="col-md-9">
+            @using (Html.BeginForm("AddPersonAction", "Persons", FormMethod.Post))
+            {
+                <div>
+                    Marca
+                    @Html.TextBoxFor(a => a.Marca)
+                </div>
+                <div>
+                    Nume
+                    @Html.TextBoxFor(a => a.Nume)
+                </div>
+                <div>
+                    Prenume
+                    @Html.TextBoxFor(a => a.Prenume)
+                </div>
+                <div>
+                    Data nastere
+                    @Html.TextBoxFor(a => a.DataNastere)
+                </div>
+                <div>
+                    Sex
+                    <div>
+                        @Html.DropDownListFor(a => a.Sex, new SelectList(new List<Object>{
+                           new { value = "F" , text = "F"  },
+                           new { value = "M" , text = "M" }},
+                           "value",
+                           "text",
+                           Model.Sex
+                        ))
+                    </div>
+                </div>
+                <div>
+                    Nationalitate
+                    <div>
+                        @Html.DropDownListFor(a => a.Nationalitate, new SelectList(new List<Object>{
+                           new { value = "RO" , text = "RO"  } },
+                           "value",
+                           "text",
+                           Model.Nationalitate
+                        ))
+                    </div>
+                </div>
+                <div>
+                    Email
+                    @Html.TextBoxFor(a => a.Email)
+                </div>
+                <div>
+                    <p></p>
+                    <button type="submit">Adauga</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

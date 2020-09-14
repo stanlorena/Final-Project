@@ -22,6 +22,18 @@ namespace AppServices
             _context.SaveChanges();
         }
 
+        public void Edit(int id, string tipContract, int numarContract, DateTime dataInceput, DateTime dataSfarsit)
+        {
+            var contract = _context.Contracts.FirstOrDefault(c => c.Id == id);
+
+            contract.TipContract = tipContract;
+            contract.NumarContract = numarContract;
+            contract.DataInceput = dataInceput;
+            contract.DataSfarsit = dataSfarsit;
+
+            _context.SaveChanges();
+        }
+
         public IEnumerable<Contract> GetAll()
         {
             return _context.Contracts.Include(c => c.Person);
@@ -72,6 +84,12 @@ namespace AppServices
 
             return _context.Persons
                 .FirstOrDefault(p => p.Id == personId);
+        }
+
+        public void Remove(Contract contract)
+        {
+            _context.Remove(contract);
+            _context.SaveChanges();
         }
     }
 }

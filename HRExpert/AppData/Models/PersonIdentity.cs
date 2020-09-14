@@ -21,7 +21,7 @@ namespace AppData.Models
         public DateTime DataEmitere { get; set; }
         [Required]
         public DateTime DataExpirare { get; set; }
-        [Required]
+        public int PersoanaId { get; set; }
         public Person Persoana { get; set; }
     }
 }

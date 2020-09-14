@@ -10,6 +10,8 @@ namespace AppData
         IEnumerable<ContractInsurance> GetAll();
         ContractInsurance GetById(int insuranceId);
         void Add(ContractInsurance contractInsurance);
+        void Remove(ContractInsurance contractInsurance);
+        void Edit(int contractInsuranceId, string asigurare, string companieAsigurare, DateTime dataInceput, DateTime dataSfarsit);
         IEnumerable<ContractInsurance> GetContractInsuranceHistory(int id);
     }
 }

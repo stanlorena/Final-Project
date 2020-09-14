@@ -39,6 +39,11 @@ namespace HRExpert
             services.AddScoped<IContractWorkProgram, ContractWorkProgramService>();
             services.AddScoped<IStatistics, StatisticsService>();
             services.AddDbContext<HrContext>(options => options.UseSqlServer(Configuration.GetConnectionString("HrConnection")));
+
+            services.Configure<IISServerOptions>(options =>
+            {
+                options.AllowSynchronousIO = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

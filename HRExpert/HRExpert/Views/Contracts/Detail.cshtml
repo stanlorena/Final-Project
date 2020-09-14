@@ -1,6 +1,8 @@
 ﻿@using HRExpert.Models.Contracte
 @model HRExpert.Models.Contracte.ContractDetailModel
 
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
 <div class="container">
     <div class="page-header clearfix detailHeading">
 
@@ -22,7 +24,15 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h4>Fiscalitate contract <button class="button">+</button> </h4>
+        <a class="button" role="button" asp-controller="Contracts" asp-action="DeleteContract" asp-route-id="@Model.Id"><i class='fas fa-trash-alt'></i></a>
+        <a class="button" role="button" asp-controller="Contracts" asp-action="EditContract" asp-route-id="@Model.Id"><i class='fas fa-marker'></i></a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="row"><br /></div>
+        <h4>Fiscalitate <a class="button" role="button" asp-controller="Contracts" asp-action="AddContractFiscality" asp-route-id="@Model.Id">+</a> </h4>
         <table class="table table-bordered table-hover table-condensed">
             <thead>
                 <tr>
@@ -46,7 +56,7 @@
                             <td> Nu</td>
                         }
                         <td> @contractFiscality.DataInceput</td>
-                        <td> @contractFiscality.DataSfarsit</td>
+                        <td> @contractFiscality.DataSfarsit <a class="close" role="button" asp-controller="Contracts" asp-action="DeleteFiscality" asp-route-id="@contractFiscality.Id">&times;</a> <a class="close" role="button" asp-controller="Contracts" asp-action="EditContractFiscality" asp-route-id="@contractFiscality.Id"><i class='far fa-edit' style='font-size:14px;padding-left:10px;text-align: center'></i> </a> </td>
                     </tr>
                 }
             </tbody>
@@ -56,7 +66,7 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h4>Asigurare contract <button class="button">+</button> </h4>
+        <h4>Asigurare <a class="button" role="button" asp-controller="Contracts" asp-action="AddContractInsurance" asp-route-id="@Model.Id">+</a> </h4>
         <table class="table table-bordered table-hover table-condensed">
             <thead>
                 <tr>
@@ -73,7 +83,7 @@
                         <td> @contractInsurance.Asigurare</td>
                         <td> @contractInsurance.CompanieAsigurare</td>
                         <td> @contractInsurance.DataInceput</td>
-                        <td> @contractInsurance.DataSfarsit</td>
+                        <td> @contractInsurance.DataSfarsit <a class="close" role="button" asp-controller="Contracts" asp-action="DeleteInsurance" asp-route-id="@contractInsurance.Id">&times;</a> <a class="close" role="button" asp-controller="Contracts" asp-action="EditContractInsurance" asp-route-id="@contractInsurance.Id"><i class='far fa-edit' style='font-size:14px;padding-left:10px;text-align: center'></i> </a></td>
                     </tr>
                 }
             </tbody>
@@ -83,7 +93,7 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h4>Asignare in structura organizatorica <button class="button">+</button></h4>
+        <h4>Asignare in structura organizatorica <a class="button" role="button" asp-controller="Contracts" asp-action="AddContractOrgAssignment" asp-route-id="@Model.Id">+</a></h4>
         <table class="table table-bordered table-hover table-condensed">
             <thead>
                 <tr>
@@ -100,7 +110,7 @@
                         <td> @contractOA.Departament</td>
                         <td> @contractOA.Functie</td>
                         <td> @contractOA.DataInceput</td>
-                        <td> @contractOA.DataSfarsit</td>
+                        <td> @contractOA.DataSfarsit <a class="close" role="button" asp-controller="Contracts" asp-action="DeleteCoa" asp-route-id="@contractOA.Id">&times;</a> <a class="close" role="button" asp-controller="Contracts" asp-action="EditContractOrgAssignment" asp-route-id="@contractOA.Id"><i class='far fa-edit' style='font-size:14px;padding-left:10px;text-align: center'></i> </a></td>
                     </tr>
                 }
             </tbody>
@@ -110,7 +120,7 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h4>Perioada contract <button class="button">+</button></h4>
+        <h4>Perioada <a class="button" role="button" asp-controller="Contracts" asp-action="AddContractPeriod" asp-route-id="@Model.Id">+</a></h4>
         <table class="table table-bordered table-hover table-condensed">
             <thead>
                 <tr>
@@ -125,7 +135,7 @@
                     <tr>
                         <td> @contractPeriod.Perioada</td>
                         <td> @contractPeriod.DataInceput</td>
-                        <td> @contractPeriod.DataSfarsit</td>
+                        <td> @contractPeriod.DataSfarsit <a class="close" role="button" asp-controller="Contracts" asp-action="DeletePeriod" asp-route-id="@contractPeriod.Id">&times;</a> <a class="close" role="button" asp-controller="Contracts" asp-action="EditContractPeriod" asp-route-id="@contractPeriod.Id"><i class='far fa-edit' style='font-size:14px;padding-left:10px;text-align: center'></i> </a></td>
                     </tr>
                 }
             </tbody>
@@ -135,7 +145,7 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h4>Salariu contract <button class="button">+</button></h4>
+        <h4>Salariu <a class="button" role="button" asp-controller="Contracts" asp-action="AddContractSalary" asp-route-id="@Model.Id">+</a></h4>
         <table class="table table-bordered table-hover table-condensed">
             <thead>
                 <tr>
@@ -150,7 +160,7 @@
                     <tr>
                         <td> @contractSalary.Salariu</td>
                         <td> @contractSalary.DataInceput</td>
-                        <td> @contractSalary.DataSfarsit</td>
+                        <td> @contractSalary.DataSfarsit <a class="close" role="button" asp-controller="Contracts" asp-action="DeleteSalary" asp-route-id="@contractSalary.Id">&times;</a> <a class="close" role="button" asp-controller="Contracts" asp-action="EditContractSalary" asp-route-id="@contractSalary.Id"><i class='far fa-edit' style='font-size:14px;padding-left:10px;text-align: center'></i> </a></td>
                     </tr>
                 }
             </tbody>
@@ -160,7 +170,7 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h4>Program de lucru contract <button class="button">+</button></h4>
+        <h4>Program de lucru <a class="button" role="button" asp-controller="Contracts" asp-action="AddContractWorkProgram" asp-route-id="@Model.Id">+</a></h4>
         <table class="table table-bordered table-hover table-condensed">
             <thead>
                 <tr>
@@ -177,7 +187,7 @@
                         <td> @contractWorkProgram.ProgramLucru</td>
                         <td> @contractWorkProgram.Norma</td>
                         <td> @contractWorkProgram.DataInceput</td>
-                        <td> @contractWorkProgram.DataSfarsit</td>
+                        <td> @contractWorkProgram.DataSfarsit <a class="close" role="button" asp-controller="Contracts" asp-action="DeleteWorkProgram" asp-route-id="@contractWorkProgram.Id">&times;</a> <a class="close" role="button" asp-controller="Contracts" asp-action="EditContractWorkProgram" asp-route-id="@contractWorkProgram.Id"><i class='far fa-edit' style='font-size:14px;padding-left:10px;text-align: center'></i> </a></td>
                     </tr>
                 }
             </tbody>

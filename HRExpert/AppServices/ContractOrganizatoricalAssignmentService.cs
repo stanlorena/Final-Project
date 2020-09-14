@@ -22,6 +22,18 @@ namespace AppServices
             _context.SaveChanges();
         }
 
+        public void Edit(int contractOrgAssignmentId, string departament, string functie, DateTime dataInceput, DateTime dataSfarsit)
+        {
+            var coa = _context.ContractOrganizatoricalAssignments.FirstOrDefault(c => c.Id == contractOrgAssignmentId);
+
+            coa.Departament = departament;
+            coa.Functie = functie;
+            coa.DataInceput = dataInceput;
+            coa.DataSfarsit = dataSfarsit;
+
+            _context.SaveChanges();
+        }
+
         public IEnumerable<ContractOrganizatoricalAssignment> GetAll()
         {
             return _context.ContractOrganizatoricalAssignments;
@@ -38,6 +50,12 @@ namespace AppServices
             return _context.ContractOrganizatoricalAssignments.
                 Where(c => c.Contract.Id == id).
                 OrderByDescending(c => c.DataInceput);
+        }
+
+        public void Remove(ContractOrganizatoricalAssignment coa)
+        {
+            _context.Remove(coa);
+            _context.SaveChanges();
         }
     }
 }

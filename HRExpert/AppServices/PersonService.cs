@@ -22,6 +22,23 @@ namespace AppServices
             _context.SaveChanges();
         }
 
+        public void Edit(int id, int marca, string nume, string prenume, DateTime dataNasterii, string sex, string nationalitate, string email)
+        {
+            var person = _context.Persons.FirstOrDefault(p => p.Id == id);
+            //_context.Update(person);
+
+            person.Marca = marca;
+            person.Nume = nume;
+            person.Prenume = prenume;
+            person.DataNastere = dataNasterii;
+            person.Sex = sex;
+            person.Nationalitate = nationalitate;
+            person.Email = email;
+
+            //_context.Update(person);
+            _context.SaveChanges();
+        }
+
         public IEnumerable<Person> GetAll()
         {
             return _context.Persons;
@@ -37,6 +54,13 @@ namespace AppServices
         {
             return _context.Persons
                 .FirstOrDefault(person => person.Id == id);
+        }
+
+        public int GetIdByMarca(int marca)
+        {
+            return _context.Persons.
+                FirstOrDefault(person => person.Marca == marca)
+                .Id;
         }
 
         public int GetMarca(int id)
@@ -64,5 +88,10 @@ namespace AppServices
             throw new NotImplementedException();
         }
 
+        public void Remove(Person person)
+        {
+            _context.Remove(person);
+            _context.SaveChanges();
+        }
     }
 }

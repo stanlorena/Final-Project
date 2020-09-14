@@ -1,0 +1,62 @@
+﻿@using HRExpert.Models.Persoane
+@model HRExpert.Models.Persoane.AddPersonAddressModel
+
+@section Scripts{
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+}
+
+<div class="container">
+    <div class="header clearfix detailHeading">
+        <h2 class="text-muted text-center">Editare adresa</h2>
+    </div>
+    <div class="jumbotron">
+        <div class="col-md-9">
+            @using (Html.BeginForm("EditPersonAddressAction", "Persons", FormMethod.Post))
+            {
+                @Html.HiddenFor(a => a.PersonAddressId)
+                <div>
+                    Strada
+                    @Html.TextBoxFor(a => a.Strada)
+                </div>
+                <div>
+                    Numar
+                    @Html.TextBoxFor(a => a.Numar)
+                </div>
+                <div>
+                    Bloc
+                    @Html.TextBoxFor(a => a.Bloc)
+                </div>
+                <div>
+                    Etaj
+                    @Html.TextBoxFor(a => a.Etaj)
+                </div>
+                <div>
+                    Apartament
+                    @Html.TextBoxFor(a => a.Apartament)
+                </div>
+                <div>
+                    Localitate
+                    @Html.TextBoxFor(a => a.Localitate)
+                </div>
+                <div>
+                    Judet
+                    @Html.TextBoxFor(a => a.Judet)
+                </div>
+                <div>
+                    Data inceput
+                    @Html.TextBoxFor(a => a.DataInceput)
+                </div>
+                <div>
+                    Data sfarsit
+                    @Html.TextBoxFor(a => a.DataSfarsit)
+                </div>
+                <div>
+                    <p></p>
+                    <button type="submit">Actualizeaza</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -2,7 +2,7 @@
 @model HRExpert.Models.Contracte.ContractIndexModel
 
 <div id="contracts">
-    <h3>Contracte <button class="button">+</button> <button class="button"><i class="fa fa-arrow-circle-down"></i></button></h3>
+    <h3>Contracte <a class="button" role="button" asp-controller="Contracts" asp-action="AddContract">+</a> <a class="button" role="button" asp-controller="Contracts" asp-action="ExportToExcel"><i class="fa fa-arrow-circle-down"></i></a></h3>
     <div id="contractIndex">
         <table class="table table-condensed" id="contractIndexTable">
             <thead>

@@ -1,9 +1,11 @@
 ﻿@using HRExpert.Models.Persoane
 @model HRExpert.Models.Persoane.PersonDetailModel
 
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
 <div class="container">
     <div class="page-header clearfix detailHeading">
-        
+
     </div>
 </div>
 
@@ -23,7 +25,15 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h4>Identitatea persoanei <button class="button">+</button> </h4>
+        <a class="button" role="button" asp-controller="Persons" asp-action="DeletePerson" asp-route-id="@Model.PersonId"><i class='fas fa-trash-alt'></i></a>
+        <a class="button" role="button" asp-controller="Persons" asp-action="EditPerson" asp-route-id="@Model.PersonId"><i class='fas fa-marker'></i></a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="row"><br /></div>
+        <h4>Acte de identitate <a class="button" role="button" asp-controller="Persons" asp-action="AddPersonIdentity" asp-route-id="@Model.PersonId">+</a> </h4>
         <table class="table table-bordered table-hover table-condensed">
             <thead>
                 <tr>
@@ -36,16 +46,16 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach(var personIdentity in @Model.PersonIdentity)
+                @foreach (var personIdentity in @Model.PersonIdentity)
                 {
-                <tr>
-                    <td>@personIdentity.CNP</td>
-                    <td>@personIdentity.Numar</td>
-                    <td>@personIdentity.Serie</td>
-                    <td>@personIdentity.Emitent</td>
-                    <td>@personIdentity.DataEmitere</td>
-                    <td>@personIdentity.DataExpirare</td>
-                </tr>
+                    <tr>
+                        <td>@personIdentity.CNP</td>
+                        <td>@personIdentity.Serie</td>
+                        <td>@personIdentity.Numar</td>
+                        <td>@personIdentity.Emitent</td>
+                        <td>@personIdentity.DataEmitere.ToString("dd/MM/yyyy")</td>
+                        <td>@personIdentity.DataExpirare.ToString("dd/MM/yyyy") <a class="close" role="button" asp-controller="Persons" asp-action="DeleteIdentity" asp-route-id="@personIdentity.Id">&times;</a> <a class="close" role="button" asp-controller="Persons" asp-action="EditPersonIdentity" asp-route-id="@personIdentity.Id"><i class='far fa-edit' style='font-size:14px'></i></a> </td>
+                    </tr>
                 }
             </tbody>
         </table>
@@ -54,7 +64,7 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h4>Adresa persoanei <button class="button">+</button></h4>
+        <h4>Adrese <a class="button" role="button" asp-controller="Persons" asp-action="AddPersonAddress" asp-route-id="@Model.PersonId">+</a></h4>
         <table class="table table-bordered table-hover table-condensed">
             <thead>
                 <tr>
@@ -95,10 +105,10 @@
                             @personAddress.Judet
                         </td>
                         <td>
-                            @personAddress.DataInceput
+                            @personAddress.DataInceput.ToString("dd/MM/yyyy")
                         </td>
                         <td>
-                            @personAddress.DataSfarsit
+                            @personAddress.DataSfarsit.ToString("dd/MM/yyyy")<a class="close" role="button" asp-controller="Persons" asp-action="DeleteAddress" asp-route-id="@personAddress.Id">&times;</a> <a class="close" role="button" asp-controller="Persons" asp-action="EditPersonAddress" asp-route-id="@personAddress.Id"><i class='far fa-edit' style='font-size:14px;padding-left:10px;text-align: center'></i></a>
                         </td>
                     </tr>
                 }

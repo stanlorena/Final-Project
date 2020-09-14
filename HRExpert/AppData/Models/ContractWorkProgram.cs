@@ -16,6 +16,7 @@ namespace AppData.Models
         [Required]
         public DateTime DataInceput { get; set; }
         public DateTime DataSfarsit { get; set; }
+        public int ContractId { get; set; }
         [Required]
         public Contract Contract { get; set; }
     }

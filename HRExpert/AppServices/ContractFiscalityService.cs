@@ -22,6 +22,18 @@ namespace AppServices
             _context.SaveChanges();
         }
 
+        public void Edit(int contractFiscalityId, string fiscalitate, bool seAcordaDeduceri, DateTime dataInceput, DateTime dataSfarsit)
+        {
+            var contractFiscality = _context.ContractFiscalities.FirstOrDefault(c => c.Id == contractFiscalityId);
+
+            contractFiscality.Fiscalitate = fiscalitate;
+            contractFiscality.SeAcordaDeduceri = seAcordaDeduceri;
+            contractFiscality.DataInceput = dataInceput;
+            contractFiscality.DataSfarsit = dataSfarsit;
+
+            _context.SaveChanges();
+        }
+
         public IEnumerable<ContractFiscality> GetAll()
         {
             return _context.ContractFiscalities;
@@ -38,6 +50,12 @@ namespace AppServices
             return _context.ContractFiscalities.
                 Where(c => c.Contract.Id == id).
                 OrderByDescending(c => c.DataInceput);
+        }
+
+        public void Remove(ContractFiscality contractFiscality)
+        {
+            _context.Remove(contractFiscality);
+            _context.SaveChanges();
         }
     }
 }

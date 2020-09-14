@@ -22,6 +22,17 @@ namespace AppServices
             _context.SaveChanges();
         }
 
+        public void Edit(int ContractSalaryId, double salary, DateTime dataInceput, DateTime dataSfarsit)
+        {
+            var contractSalary = _context.ContractSalaries.FirstOrDefault(c => c.Id == ContractSalaryId);
+
+            contractSalary.Salariu = salary;
+            contractSalary.DataInceput = dataInceput;
+            contractSalary.DataSfarsit = dataSfarsit;
+
+            _context.SaveChanges();
+        }
+
         public IEnumerable<ContractSalary> GetAll()
         {
             return _context.ContractSalaries;
@@ -38,6 +49,12 @@ namespace AppServices
             return _context.ContractSalaries.
                 Where(c => c.Contract.Id == id).
                 OrderByDescending(c => c.DataInceput);
+        }
+
+        public void Remove(ContractSalary contractSalary)
+        {
+            _context.Remove(contractSalary);
+            _context.SaveChanges();
         }
     }
 }

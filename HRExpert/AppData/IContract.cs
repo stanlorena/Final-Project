@@ -10,6 +10,8 @@ namespace AppData
         IEnumerable<Contract> GetAll();
         Contract GetById(int id);
         void Add(Contract newContract);
+        void Remove(Contract contract);
+        void Edit(int id, string tipContract, int numarContract, DateTime dataInceput, DateTime dataSfarsit);
         Person GetPerson(int contractId);
         ContractFiscality GetContractFiscality();
         ContractInsurance GetContractInsurance();

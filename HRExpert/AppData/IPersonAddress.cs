@@ -10,6 +10,8 @@ namespace AppData
         IEnumerable<PersonAddress> GetAll();
         PersonAddress GetById(int id);
         void Add(PersonAddress newPersonAddress);
+        void Remove(PersonAddress personAddress);
+        void Edit(int personAddressId, string strada, int numar, string bloc, int etaj, int apartament, string localitate, string judet, DateTime dataInceput, DateTime dataSfarsit);
         IEnumerable<PersonAddress> GetPersonAddressHistory(int id);
     }
 }
